@@ -7,7 +7,7 @@ function ProductList({ filteredProducts }) {
   return (
     <>
       {filteredProducts.map((product, id) => (
-        <Product key={id} product={product} />
+        <Product onClick={openProduct} key={id} product={product} />
       ))}
     </>
   );

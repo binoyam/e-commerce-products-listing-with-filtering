@@ -3,13 +3,6 @@ import React, { useEffect, useState } from "react";
 function Header({ setFilteredProducts, products }) {
   const [searchItem, setSearchItem] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  const handleInputChange = (e) => {
-    setSearchItem(e.target.value);
-  };
-  
   useEffect(() => {
     const trimmedSearchItem = searchItem.trim();
     let filtered;
@@ -28,9 +21,15 @@ function Header({ setFilteredProducts, products }) {
   return (
     <header className="header">
       <h1>Product Details</h1>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <input
-          onChange={handleInputChange}
+          onChange={(e) => {
+            setSearchItem(e.target.value);
+          }}
           value={searchItem}
           className="input"
           type="text"
