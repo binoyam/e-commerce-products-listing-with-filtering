@@ -9,11 +9,13 @@ function Header({ setFilteredProducts, products }) {
     filterProducts();
   };
   const filterProducts = () => {
-    const trimmedSearchItem = searchItem.trim()
+    const trimmedSearchItem = searchItem.trim();
     let filtered;
     if (trimmedSearchItem) {
       filtered = products.filter((product) => {
-        return product.category.toLowerCase().includes(trimmedSearchItem.toLowerCase());
+        return product.category
+          .toLowerCase()
+          .includes(trimmedSearchItem.toLowerCase());
       });
     } else {
       filtered = products;
