@@ -1,11 +1,11 @@
 import React from "react";
 import Product from "./Product";
 
-function ProductList({ data }) {
-    // console.log(data);
+function ProductList({ products }) {
+    // console.log(typeof(products))
   return (
     <>
-      {data.map((product, id) => (
+      {products.map((product, id) => (
         <Product key={id} product={product} />
       ))}
     </>

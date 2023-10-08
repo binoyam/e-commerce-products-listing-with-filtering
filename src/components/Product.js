@@ -1,7 +1,7 @@
 import React from "react";
 
 function Product({ product }) {
-    console.log(product);
+    // console.log(typeof(product))
   return (
     <div className="product">
       <p>
