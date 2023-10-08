@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 
-function Header({ onSearch }) {
+function Header({ setFilteredProducts, products }) {
   const [searchItem, setSearchItem] = useState("");
 
   const handleInputChange = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setSearchItem(e.target.value);
-    onSearch(e.target.value)
+    filterProducts();
+  };
+  const filterProducts = () => {
+    const trimmedSearchItem = searchItem.trim()
+    let filtered;
+    if (trimmedSearchItem) {
+      filtered = products.filter((product) => {
+        return product.category.toLowerCase().includes(trimmedSearchItem.toLowerCase());
+      });
+    } else {
+      filtered = products;
+    }
+    setFilteredProducts(filtered);
   };
 
   return (
@@ -18,7 +30,7 @@ function Header({ onSearch }) {
           value={searchItem}
           className="input"
           type="text"
-          placeholder="Search..."
+          placeholder="Search categories..."
         />
       </form>
       <nav className="nav">

@@ -6,15 +6,12 @@ import ProductList from "./components/ProductList";
 function App() {
   // console.log(Data);
   // console.log(typeof(Data))
-  const [searchKey, setSearchKey] = useState("");
-  const handleSearch = (key) => {
-    setSearchKey(key);
-  };
+  const [filteredProducts, setFilteredProducts] = useState(Data);
   return (
     <div className="app">
-      <Header onSearch={handleSearch} />
+      <Header products={Data} setFilteredProducts={setFilteredProducts} />
       <main className="main">
-        <ProductList products={Data} searchKey={searchKey} />
+        <ProductList filteredProducts={filteredProducts}  />
       </main>
     </div>
   );
