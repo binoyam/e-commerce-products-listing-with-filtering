@@ -1,32 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Header({ setFilteredProducts, products }) {
   const [searchItem, setSearchItem] = useState("");
 
-  const handleInputChange = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchItem(e.target.value);
-    filterProducts();
   };
-  const filterProducts = () => {
+  const handleInputChange = (e) => {
+    setSearchItem(e.target.value);
+  };
+  
+  useEffect(() => {
     const trimmedSearchItem = searchItem.trim();
     let filtered;
     if (trimmedSearchItem) {
       filtered = products.filter((product) => {
         return product.category
           .toLowerCase()
-          .includes(trimmedSearchItem.toLowerCase());
+          .startsWith(trimmedSearchItem.toLowerCase());
       });
     } else {
       filtered = products;
     }
     setFilteredProducts(filtered);
-  };
+  }, [searchItem, products, setFilteredProducts]);
 
   return (
     <header className="header">
       <h1>Product Details</h1>
-      <form onSubmit={handleInputChange}>
+      <form onSubmit={handleSubmit}>
         <input
           onChange={handleInputChange}
           value={searchItem}

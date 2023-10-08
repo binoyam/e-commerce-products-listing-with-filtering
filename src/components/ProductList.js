@@ -2,12 +2,12 @@ import React from "react";
 import Product from "./Product";
 
 function ProductList({ filteredProducts }) {
-  //   console.log(products);
+    // console.log(filteredProducts);
 
   return (
     <>
-      {filteredProducts.map((product) => (
-        <Product product={product} />
+      {filteredProducts.map((product, id) => (
+        <Product key={id} product={product} />
       ))}
     </>
   );
