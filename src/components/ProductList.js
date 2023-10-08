@@ -1,33 +1,26 @@
 import React from "react";
 import Product from "./Product";
 
-function ProductList({ products }) {
+function ProductList({ products, searchKey }) {
   //   console.log(products);
 
-  function countSameValues(products, key) {
-    const valueCount = {};
-    products.forEach((obj) => {
-      const value = obj[key];
-
-      if (valueCount[value]) {
-        valueCount[value]++;
-      } else {
-        valueCount[value] = 1;
-      }
-    });
-    return valueCount;
-  }
-  const valueCount = countSameValues(products, "is_available");
-  const valueCount1 = countSameValues(products, "category");
-  const valueCount2 = countSameValues(products, "color");
-
-  console.log(valueCount);
-  console.log(valueCount1);
-  console.log(valueCount2);
+  const filteredProducts = products.filter((product) => {
+    if (searchKey === "") {
+      return true;
+    } else {
+      const keys = products.keys(product);
+      return keys.some((key) => {
+        if(typeof product[key] === 'string'){
+        return product[key].toString().toLowercase().includes(searchKey.toLowercase());
+        }
+        return false
+      });
+    }
+  });
   return (
     <>
-      {products.map((product, id) => (
-        <Product key={id} product={product} />
+      {filteredProducts.map((product) => (
+        <Product product={product} />
       ))}
     </>
   );

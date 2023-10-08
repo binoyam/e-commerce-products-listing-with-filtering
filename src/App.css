@@ -13,12 +13,27 @@ body {
   padding: 1rem;
 }
 .header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
   background-color: aliceblue;
   padding: 2rem 0;
+}
+form {
+  width: 20%;
+}
+.input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 3px;
+  border: 1px solid burlywood;
+  outline: none;
+}
+.input:focus {
+  border: none;
+  outline: 1px solid gray;
 }
 .nav {
   width: 30%;

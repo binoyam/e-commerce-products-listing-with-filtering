@@ -3,7 +3,7 @@ import React from "react";
 function Product({ product }) {
     // console.log(typeof(product))
   return (
-    <div className="product">
+    <div key={product.id} className="product">
       <p>
         <span className="product-name">{product.product_name}</span>{" "}
       </p>
