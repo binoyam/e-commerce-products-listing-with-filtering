@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Product({ product }) {
   // console.log(product)
   return (
-    <Link to='productdetail'>
+    <Link to='/product-detail'>
       <div key={product.id} className="product">
         <p>
           <span className="product-name">{product.product_name}</span>{" "}
