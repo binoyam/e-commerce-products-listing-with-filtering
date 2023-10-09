@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header({ setFilteredProducts, products }) {
   const [searchItem, setSearchItem] = useState("");
@@ -38,9 +39,9 @@ function Header({ setFilteredProducts, products }) {
       </form>
       <nav className="nav">
         <ul className="links">
-          <li>Categories</li>
-          <li>Sort by</li>
-          <li>ALL</li>
+          <li><Link to='/fullpage'>Categories</Link> </li>
+          <li><Link to='/'>Availabe</Link> </li>
+          <li><Link to='/'>All</Link> </li>
         </ul>
       </nav>
     </header>

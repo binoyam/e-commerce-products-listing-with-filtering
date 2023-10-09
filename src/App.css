@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+}
 body {
   width: 100%;
   min-height: 100vh;
@@ -44,6 +47,18 @@ form {
   align-items: center;
   justify-content: space-between;
   padding-right: 2rem;
+}
+.links li a {
+  padding: 1rem;
+  background-color: rgb(226, 226, 236);
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  font-weight: 700;
+}
+.links li a:hover{
+  background-color: aquamarine;
 }
 .main {
   display: grid;
