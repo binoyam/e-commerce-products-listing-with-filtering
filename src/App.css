@@ -120,7 +120,7 @@ span.description {
   display: inherit;
 }
 .product-detail{
-  width: 100%;
+  width: 70vw;
   height: 100vh;
   background-color: antiquewhite;
 }
