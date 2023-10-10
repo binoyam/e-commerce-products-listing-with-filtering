@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
+import Nav from "./Nav";
+import Search from "./Search";
 
 function Header({ setFilteredProducts, products }) {
   const [searchItem, setSearchItem] = useState("");
@@ -22,28 +24,8 @@ function Header({ setFilteredProducts, products }) {
   return (
     <header className="header">
       <h1>Product Details</h1>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <input
-          onChange={(e) => {
-            setSearchItem(e.target.value);
-          }}
-          value={searchItem}
-          className="input"
-          type="text"
-          placeholder="Search categories..."
-        />
-      </form>
-      <nav className="nav">
-        <ul className="links">
-          <li><Link to='/fullpage'>Categories</Link> </li>
-          <li><Link to='/'>Availabe</Link> </li>
-          <li><Link to='/'>All</Link> </li>
-        </ul>
-      </nav>
+      <Search searchItem={searchItem} setSearchItem={setSearchItem} />
+      <Nav />
     </header>
   );
 }
