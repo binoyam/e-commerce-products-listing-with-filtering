@@ -10,9 +10,7 @@ function App() {
   // console.log(typeof(Data))
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
+ 
   const [filteredProducts, setFilteredProducts] = useState(Data);
   return (
     <div className="app">

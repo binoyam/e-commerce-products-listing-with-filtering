@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-function ProductList({ filteredProducts, setSelectedProduct }) {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+function ProductList({ filteredProducts}) {
+  // const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <>
       {filteredProducts.map((product, id) => (
-        <div key={id} onClick={setSelectedProduct(product)} className="product">
+        <div key={id} className="product">
           <p>
             <span className="product-name">{product.product_name}</span>{" "}
           </p>
