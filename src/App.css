@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-a{
+a {
   text-decoration: none;
 }
 body {
@@ -57,7 +57,7 @@ form {
   color: black;
   font-weight: 700;
 }
-.links li a:hover{
+.links li a:hover {
   background-color: aquamarine;
 }
 .main {
@@ -122,7 +122,7 @@ span.description {
   object-fit: cover;
   display: inherit;
 }
-.product-detail{
+.product-detail {
   width: 70vw;
   height: 100vh;
   background-color: antiquewhite;
