@@ -1,32 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function ProductList({ filteredProducts}) {
+function ProductList({ filteredProducts }) {
   // const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <>
       {filteredProducts.map((product, id) => (
-        <div key={id} className="product">
-          <p>
-            <span className="product-name">{product.product_name}</span>{" "}
-          </p>
-          <img className="product-img" src={product.brand} alt="product" />
-          <p>
-            Category: <span className="category">{product.category}</span>{" "}
-          </p>
-          <p className="description">
-            Description:{" "}
-            <span className="description">{product.description}</span>{" "}
-          </p>
-          <p>
-            Available:{" "}
-            {!product.is_available ? (
-              <span className="available">Available</span>
-            ) : (
-              <span className="not-available">Not Available</span>
-            )}
-          </p>
-        </div>
+        <Link to={`/product-detail/${product.id}`} key={id} className="product">
+          <article>
+            <p>
+              <span className="product-name">{product.product_name}</span>{" "}
+            </p>
+            <img className="product-img" src={product.brand} alt="product" />
+            <p>
+              Category: <span className="category">{product.category}</span>{" "}
+            </p>
+            <p className="description">
+              Description:{" "}
+              <span className="description">{product.description}</span>{" "}
+            </p>
+            <p>
+              Available:{" "}
+              {!product.is_available ? (
+                <span className="available">Available</span>
+              ) : (
+                <span className="not-available">Not Available</span>
+              )}
+            </p>
+          </article>
+        </Link>
       ))}
     </>
   );

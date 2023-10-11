@@ -4,6 +4,7 @@ import Data from "./productData.json";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import Product from "./components/Product";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -14,14 +15,21 @@ function App() {
       <Header products={Data} setFilteredProducts={setFilteredProducts} />
 
       <main className="main">
-        {!selectedProduct ? (
-          <ProductList
-            filteredProducts={filteredProducts}
-            selectedProduct={selectedProduct}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProductList
+                filteredProducts={filteredProducts}
+                selectedProduct={selectedProduct}
+              />
+            }
           />
-        ) : (
-          <Product selectedProduct={setSelectedProduct} />
-        )}
+          <Route
+            path="/product-detail/:id"
+            element={<Product selectedProduct={selectedProduct} />}
+          />
+        </Routes>
       </main>
     </div>
   );
