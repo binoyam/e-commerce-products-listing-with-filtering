@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search({ searchItem , setSearchItem}) {
+function Search({ searchItem, setSearchItem }) {
   return (
     <form
       onSubmit={(e) => {
