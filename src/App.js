@@ -16,15 +16,10 @@ function App() {
 
       <main className="main">
         <Routes>
+          
           <Route
             exact
             path="/"
-            render={() => (
-              <ProductList
-                filteredProducts={filteredProducts}
-                selectedProduct={selectedProduct}
-              />
-            )}
             element={
               <ProductList
                 filteredProducts={filteredProducts}
@@ -32,6 +27,7 @@ function App() {
               />
             }
           />
+
           <Route path="/products/:id" element={<Product products={Data} />} />
         </Routes>
       </main>
