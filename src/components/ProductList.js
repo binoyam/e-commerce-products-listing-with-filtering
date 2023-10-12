@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ProductList({ filteredProducts }) {
-
   return (
     <>
-      {filteredProducts.map((product, id) => (
-        <Link to={`/product-detail/${product.id}`} key={id} className="product">
+      {filteredProducts.map((product) => (
+        <Link
+          key={product.id}
+          className="product"
+          to={`/products/${product.id}`}
+        >
           <article>
             <p>
               <span className="product-name">{product.product_name}</span>{" "}

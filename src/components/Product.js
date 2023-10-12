@@ -1,17 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-function Product({ products }) {
- 
-
-  console.log(products);
+const Product = ({ products, props }) => {
   const { id } = useParams();
-  const currntProduct  = products.find((product) => product.id === id)
- console.log(currntProduct)
+
+  const foundproducts = products.find(obj => obj.id.toString() === id)
+  console.log(props)
   return (
     <>
       <div className="product-info">
-        <h1>sdfsdf</h1>
+        <h1></h1>
       </div>
     </>
   );

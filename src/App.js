@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Data from "./productData.json";
 import Header from "./components/Header";
@@ -17,7 +17,14 @@ function App() {
       <main className="main">
         <Routes>
           <Route
+            exact
             path="/"
+            render={() => (
+              <ProductList
+                filteredProducts={filteredProducts}
+                selectedProduct={selectedProduct}
+              />
+            )}
             element={
               <ProductList
                 filteredProducts={filteredProducts}
@@ -26,8 +33,8 @@ function App() {
             }
           />
           <Route
-            path="/product-detail/:id"
-            render={() => <Product products={Data} />}
+            path="/products/:id"
+            render={(props) => <Product {...props} products={Data} />}
             element={<Product products={Data} />}
           />
         </Routes>

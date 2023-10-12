@@ -122,8 +122,9 @@ span.description {
   object-fit: cover;
   display: inherit;
 }
-.product-detail {
+.product-info {
   width: 70vw;
   height: 100vh;
   background-color: antiquewhite;
+  text-align: center;
 }
