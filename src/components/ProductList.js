@@ -5,31 +5,32 @@ function ProductList({ filteredProducts }) {
   return (
     <>
       {filteredProducts.map((product) => (
-        <Link
-          key={product.id}
-          className="product"
-          to={`/products/${product.id}`}
-        >
-          <article>
-            <p>
-              <span className="product-name">{product.product_name}</span>{" "}
-            </p>
-            <img className="product-img" src={product.brand} alt="product" />
-            <p>
-              Category: <span className="category">{product.category}</span>{" "}
-            </p>
-            <p className="description">
-              Description:{" "}
+        <Link className="link" key={product.id} to={`/products/${product.id}`}>
+          <article className="product">
+            <h1 className="product-name">{product.product_name}</h1>
+
+            <div className="product-image-div">
+              <img src={product.brand} alt="product" />
+            </div>
+
+            <div className="product-info-div">
+              <span className="pre-text"> Category:</span>{" "}
+              <span className="category">{product.category}</span>{" "}
+            </div>
+
+            <div className="product-info-div">
+              <span className="pre-text">Description:</span>
               <span className="description">{product.description}</span>{" "}
-            </p>
-            <p>
-              Available:{" "}
+            </div>
+
+            <div className="product-info-div">
+              <span className="pre-text">Available:</span>
               {!product.is_available ? (
                 <span className="available">Available</span>
               ) : (
                 <span className="not-available">Not Available</span>
               )}
-            </p>
+            </div>
           </article>
         </Link>
       ))}
