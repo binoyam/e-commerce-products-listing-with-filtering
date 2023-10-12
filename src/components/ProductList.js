@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ProductList({ filteredProducts }) {
-  // const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <>

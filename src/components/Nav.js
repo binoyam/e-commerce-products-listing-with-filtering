@@ -5,7 +5,7 @@ function Nav() {
     <nav className="nav">
       <ul className="links">
         <li>
-          <Link to="/fullpage">Categories</Link>{" "}
+          <Link to="/">Categories</Link>{" "}
         </li>
         <li>
           <Link to="/">Availabe</Link>{" "}

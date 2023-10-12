@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import "./App.css";
 import Data from "./productData.json";
 import Header from "./components/Header";
@@ -27,7 +27,8 @@ function App() {
           />
           <Route
             path="/product-detail/:id"
-            element={<Product selectedProduct={selectedProduct} />}
+            render={() => <Product products={Data} />}
+            element={<Product products={Data} />}
           />
         </Routes>
       </main>
