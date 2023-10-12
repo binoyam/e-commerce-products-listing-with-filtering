@@ -32,11 +32,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/products/:id"
-            render={(props) => <Product {...props} products={Data} />}
-            element={<Product products={Data} />}
-          />
+          <Route path="/products/:id" element={<Product products={Data} />} />
         </Routes>
       </main>
     </div>
