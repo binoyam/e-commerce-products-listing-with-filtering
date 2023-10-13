@@ -62,20 +62,21 @@ form {
 }
 .links li a {
   padding: 4px 0.5rem 8px;
-  border-radius: 10px;
+  border-radius: 4px;
   text-decoration: underline;
   font-size: 20px;
   color: var(--black);
   font-weight: 600;
   letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
 }
 .links li a:hover {
-  background-color: var(--maroon);
-  color: var(--green);
+  background-color: white;
   text-decoration: none;
 }
 /*  PRODUCTS GRID  */
 .main {
+  margin-top: calc(60px + 1rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 0.5rem;
@@ -90,6 +91,12 @@ form {
   gap: 0.7rem;
   padding: 1rem;
   max-height: 400px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in;
+}
+.product:hover{
+  box-shadow: 2px 2px 55px -18px var(--teal);
+  scale: 1.1;
 }
 /* LINK */
 .link {
@@ -147,7 +154,7 @@ form {
 
 .product-info {
   width: 100%;
-  height: calc(100vh - 105px - 4rem);
+  height: calc(100vh - 80px - 2rem);
   background-color: var(--teal);
   padding: 2rem;
   display: grid;

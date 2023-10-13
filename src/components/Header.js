@@ -23,7 +23,7 @@ function Header({ setFilteredProducts, products }) {
 
   return (
     <header className="header">
-      <h1>Product Details</h1>
+      <h1>Fk Store</h1>
       <Search searchItem={searchItem} setSearchItem={setSearchItem} />
       <Nav />
     </header>
