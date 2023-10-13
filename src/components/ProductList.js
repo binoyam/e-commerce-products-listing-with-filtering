@@ -14,13 +14,13 @@ function ProductList({ filteredProducts }) {
             </div>
 
             <div className="product-info-div">
-              <span className="pre-text"> Category:</span>{" "}
-              <span className="category">{product.category}</span>{" "}
+              <span className="pre-text"> Category:</span>
+              <p className="category">{product.category}</p>
             </div>
 
             <div className="product-info-div">
               <span className="pre-text">Description:</span>
-              <span className="description">{product.description}</span>{" "}
+              <span className="description">{product.description}</span>
             </div>
 
             <div className="product-info-div">
